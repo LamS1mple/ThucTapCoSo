@@ -1,0 +1,149 @@
+.content {
+  padding-top: 150px;
+  display: flex;
+}
+.hinh-anh {
+  width: 60%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.thong-tin {
+  width: 40%;
+}
+
+.anh {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  max-width: 100%;
+  cursor: pointer;
+}
+.anh-chinh {
+  grid-area: 1 / 2 / 4 / 5;
+}
+.anh1 {
+  justify-items: center;
+  max-width: 100%;
+  border-radius: 5px;
+  align-items: center;
+}
+.thong-tin {
+  padding-left: 30px;
+}
+
+.mau-sac {
+  display: flex;
+}
+.chon-mau-sac {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+.chon-mau-sac:first-child {
+  margin-left: 0px;
+}
+.chon-mau-sac > span {
+  height: 30px;
+  width: 30px;
+  display: block;
+  border-radius: 50%;
+  background-color: aqua;
+}
+.active{
+    border-color: rgba(0, 0, 0, 1) !important;
+}
+.chon-mau-sac:hover,
+.chon-kich-co:hover {
+  border-color: rgba(0, 0, 0, 1);
+}
+
+.chon-kich-co {
+  height: 40px;
+  width: 40px;
+  padding: 10px 10px;
+  border-radius: 50%;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 20px;
+}
+.chon-kich-co:first-child{
+  margin-left: 0px;
+}
+.list-kich-thuoc{
+  display: flex;
+  
+
+}
+.chon-so-luong{
+    display: flex;
+    text-align: center;
+    float: left;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  border-style: none;
+  pointer-events: none;
+    text-align: center;
+}
+
+.chon-so-luong{
+    border: solid 2px rgba(0, 0, 0, 0.2);
+}
+.bam{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.bam:first-child{
+    color: rgba(0, 0, 0, 0.2);
+    border-style:none ;
+    border-right: solid 2px rgba(0, 0, 0, 0.2) !important
+}
+.bam:last-child{
+    border-style:none ;
+    border-left: solid 2px rgba(0, 0, 0, 0.2) !important
+}
+
+
+
+
+input[type="number"]:focus-visible {
+    outline: none;
+}
+
+
+.them{
+  clear: left;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .them-danh-sach{
+  background-color: rgb(243, 222, 222); 
+  border-style: none;
+  height: 40px;
+  color: rgb(235, 120, 25);
+  cursor: pointer;
+  border:solid 1px red
+} */
+
+.them-danh-sach:hover{
+  background-color: rgb(255, 162, 0);
+}

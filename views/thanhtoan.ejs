@@ -1,0 +1,108 @@
+<% include("partials/header") %>
+<link rel="stylesheet" href="/css/thanhtoan.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<form method="post" action="/tinhtien"  class="thanh-toan">
+    <div class="thong-tin">
+        <div class="header-logo">
+            <a href="/">
+                <img class="img-logo" src="/img/logo.svg" alt="">
+            </a>
+        </div>
+        <div class="khung">
+            <div class="thong-tin-giao-hang">
+                <div style="text-align: center;">
+                    <h2>Thông tin giao hàng</h2>
+                    
+                </div>  
+                <div class="ten">
+                    <label for="">Họ và tên</label>
+                    <input type="text" placeholder="" name="ten">
+                </div>
+                <div class="ten">
+                    <label for="diachi">Số điện thoại</label>
+                    <input type="text" placeholder="" name="diachi">
+                </div>
+                <div class="ten">
+                    <label for="diachi">Địa chỉ</label>
+                    <input type="text" placeholder="" name="diachi">
+                </div>
+               
+            </div>
+            <div class="thong-tin-thanh-toan">
+                <div style="text-align: center;">
+                    <h2> Phương thức thanh toán</h2>
+                </div>
+                <div class="thanh-toan">
+                    <div class="chung online">
+                        <input type="radio" name="chon" value="1">
+                        <label for="">Thanh toán online</label>
+                    </div>
+                    <div class="chung ofline">
+                        <input type="radio" name="chon" value="2">
+                        <label for="">Thanh toán khi nhận hàng</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="san-pham" > 
+        <% var soluong = 0 %>
+        <h2>Đơn hàng(<%= soluong %> sản phẩm)</h2>
+        <div class="san-pham-sroll">
+            <% hang.forEach(element =>{ %>
+                <input type="hidden" value="<%= element._id %>" name="duochon">
+                <% soluong += element.soluong %>
+                <div class="cac-san-pham">
+                    <div class="anh-san-pham">
+                        <img src="/uploads-img/<%= element.sanphamID.anh[0] %>" alt="">
+                        <span><%= element.soluong %></span>
+                    </div>
+                    <div><%= element.sanphamID.tenSanPham    %></div>
+                    <% if (element.sanphamID.tinhTime() <=0 && element.sanphamID.tinhTime() > -86400000) {%>
+                        <div><span class="tiensp" value="<%=  element.sanphamID.tinhtien(element.dattruoc)* element.soluong %>"><%= element.sanphamID.chuyenTien(
+                            element.sanphamID.tinhtien(element.dattruoc)* element.soluong)  %></span></div>
+                    <% }else{ %>
+                        <div><span class="tiensp" value="<%=  element.sanphamID.tinhtien()* element.soluong %>"><%= element.sanphamID.chuyenTien(
+                            element.sanphamID.tinhtien()* element.soluong)  %></span></div>
+                    <% } %>
+                    
+                </div>
+            <% })  %>
+        </div>
+        <div style="display: flex;
+        justify-content: space-between;">
+            <div class="form-check form-switch">
+                <input name="checkcheck" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" value="<%= user.tichtien %>" >
+                <label class="form-check-label" for="flexSwitchCheckChecked">Tiền tích lũy <%= hang[0].sanphamID.chuyenTien(user.tichtien) %>đ</label>
+              </div>
+              
+            <p id="capbac" value="<%= user.sotiendamua %>">Cấp bậc <%= user.capBac() %></p>
+            
+        </div>
+        <table>
+            <tr class="tam-tinh">
+                <th>Tạm tính</th>
+                <th id="tientam" class="tien-tam">0</th>
+            </tr>
+            <tr class="tam-tinh">
+                <th>Phí vận chuyển</th>
+                <th id="ship" class="tien-tam">Miễn phí</th>
+            </tr>
+            <tr class="tam-tinh">
+                <th><h1>Tổng cộng</h1></th>
+                <th class="tien-tam"><h1 id="tong"></h1></th>
+            </tr>
+        </table>
+        <input type="hidden" value="" name="tongtien" id="tienan">
+        <div class="bam">
+            <button type="submit">Đặt hàng</button>
+        </div>
+        
+        
+    </div>
+</form>
+
+
+<script src="/js/thanhtoan.js"></script>
+<% include("partials/footer") %>

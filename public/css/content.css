@@ -1,0 +1,119 @@
+.content {
+  display: grid;
+  gap: 50px 40px;
+  justify-content: center;
+  grid-template-columns: 200px 200px 200px 200px 200px;
+}
+
+.sp1-sanpham {
+  height: 300px;
+  position: relative;
+}
+.sanpham {
+  display: block;
+  height: 300px;
+  margin: auto auto;
+  border-radius: 12px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.sanpham1 {
+  animation: example2 0.3s;
+  animation-timing-function: ease-in-out;
+  z-index: 1;
+}
+.gia-sanpham{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.gia-sanpham :first-child{
+    color: black;
+}
+.gia-sanpham :last-child{
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through  rgba(0, 0, 0, 0.5) 2px;
+}
+
+.content-sp {
+    margin-top: 20px;
+  text-align: center;
+}
+.sp1-sanpham{
+  position: relative;
+}
+
+.sp1-sanpham > span{
+  position: absolute;
+  z-index: 1;
+  background-color: red;
+  color: white;
+  border-radius: 2px;
+}
+
+/* animation */
+.sp1-sanpham:hover .sanpham1 {
+    animation: example1 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    border-radius: 12px;
+  }
+  
+  .sp1-sanpham:hover .sanpham2 {
+    border-radius: 12px;
+    animation: example2 0.3s;
+    animation-timing-function: ease-in-out;
+  }
+
+ 
+@keyframes example1 {
+    0% {
+      /* transform: translate(-50%,0); */
+      /* transform: scale(1,1); */
+      opacity: 1;
+    }
+    100% {
+      /* transform: translate(-100%,0); */
+      /* transform: scale(0 , 0); */
+      opacity: 0;
+    }
+  }
+  
+  @keyframes example2 {
+    0% {
+      /* transform: scale(0 , 0); */
+      opacity: 0;
+    }
+    100% {
+      /* transform: scale(1,1); */
+      opacity: 1;
+    }
+  }
+
+/* media screen */
+
+@media screen and (max-width: 1170px) {
+  .content {
+    grid-template-columns: 200px 200px 200px 200px;
+  }
+}
+@media screen and (max-width: 940px) {
+  .content {
+    grid-template-columns: 200px 200px 200px;
+  }
+}
+
+@media screen and (max-width: 696px) {
+  .content {
+    grid-template-columns: 200px 200px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .content {
+    grid-template-columns: 200px;
+  }
+}

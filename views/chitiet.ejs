@@ -1,0 +1,90 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="/css/chiTietSanPham.css">
+    <div class="content">
+        <div class="hinh-anh">
+            <!-- <div><img class="" src="/uploads-img/sp1.jpg" alt=""></div> -->
+            <!-- <div class="anh-chinh"><img class="anh1" src="/uploads-img/sp1.jpg" alt=""></div>
+            <div><img src="/uploads-img/sp2.jpg" alt=""></div>
+            <div><img src="/uploads-img/sp2.jpg" alt=""></div>
+            <div><img src="/uploads-img/sp2.jpg" alt=""></div>
+            <div><img src="/uploads-img/sp2.jpg" alt=""></div>
+            <div><img src="/uploads-img/sp2.jpg" alt=""></div> -->
+            <div class="anh-chinh"><img class="anh1" src="/uploads-img/<%= sp.anh[0] %>" alt=""></div>
+
+            <% sp.anh.forEach((element , index)=> { %>
+                <div><img class="anh" src="/uploads-img/<%= element %>" alt=""></div>
+                <% }) %>
+
+
+
+        </div>
+        <form action="/sanpham/<%= sp._id %>" method="post" class="thong-tin">
+            <h1 class="ten-san-pham">
+                <%= sp.tenSanPham %>
+            </h1>
+            <div class="review">
+
+            </div>
+            <div>
+                <p>Màu sắc</p>
+
+                <div class="mau-sac">
+                    <% sp.mauSac.forEach((element)=> { %>
+                        <div class="chon-mau-sac ">
+                            <span style="background-color: <%= element %>" value="<%= element  %>">
+                            </span>
+                        </div>
+                        <% }) %>
+
+                </div>
+            </div>
+            <div  class="kich-thuoc">
+                <p>Kích cỡ</p>
+                <div class="list-kich-thuoc">
+                    <% sp.kichco.forEach(element => { %>
+                        <div class="chon-kich-co">
+                            <%= element %>
+                        </div>
+                    <% }) %>
+                </div>
+                
+                
+            </div>
+            <div class="so-luong">
+                <p>Số Lượng</p>
+                <div class="chon-so-luong">
+                    <button  class="bam" value="tru"><img src="/img/icons8-subtract-16.png" alt=""></button>
+                    <input type="number" min="1" max="99" value="1" id="">
+                    <button class="bam" value="cong"><img src="/img/icons8-plus-math-16.png" alt=""></button>
+                </div>
+            </div>
+
+            <input type="hidden" name="mausac" value="">
+            <input type="hidden" name="kichco" value="">
+            <input type="hidden" name="soluong" value="">
+            <input type="hidden" name="dattruoc"  value="<%= sp.tinhTime() / 86400000 %>">
+
+            <div class="them">
+                <button type="submit" id="myButton" class="them-danh-sach button-89 " value="1">
+                    Thêm vào giỏ hàng
+                </button>
+                <!-- <% if (sp.tinhTime() < 0){ %>
+                    
+                <% } else { %>
+                    <button type="submit" class="them-danh-sach" value="2">
+                        Đặt trước
+                    </button>
+                <% } %> -->
+                
+            </div>
+            
+
+        </form>
+    </div>
+
+    <script src="/js/chitiet.js"></script>
+    <script>
+        // Lấy đối tượng button
+   
+    </script>
+    <%- include("partials/footer") %>

@@ -1,0 +1,119 @@
+.chuyen{
+    padding-top: 180px;
+    display: flex;
+    padding-bottom:200px ;
+}
+.chuyen-sp{
+    flex-basis: 70%;
+    padding-right: 200px;
+}
+.chuyen-sp h1{
+    font-size: 70px;
+    color: #54bbef;
+}
+.chuyen-sp p{
+    font-size: 20px;
+    color: #77919e;
+}
+.lam-chuan{
+    transform: translateY(-15%);
+    float: right;
+    flex-basis: 20% ;
+    position: relative;
+    z-index: 1;
+}
+.lam-chuan img{
+    right: 0;
+    height: 530px;
+    z-index: 10;
+    position: absolute;
+}
+.chuyen-dong{
+  width: 472px;
+  height: 472px;
+  border-radius: 50% 20% / 10% 40%;
+  border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+  position: absolute;
+  right: 80px;
+  background-color: #54bbef;
+  z-index: 3;
+  transform: translate(25%);
+  animation: border 5s infinite
+  }
+
+  @keyframes border{
+    0%{
+      border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+    }
+    50%{
+      border-radius: 31% 69% 59% 41%/28% 24% 76% 72%;
+    }
+    100%{
+      border-radius: 58% 42% 38% 62%/42% 55% 45% 58%;
+    }
+  }
+.hinh-thuc{
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+.hinh-thuc-trong{
+  display: flex;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 0.4s linear;
+  padding: 20px 0;
+  box-shadow: 5px 10px 10px 1px #e0e0e0,-5px 10px 10px 1px #e0e0e0;
+}
+.hinh-thuc-trong:hover{
+  /* padding-bottom: 20px; */
+  color: #54bbef;
+  transform: translateY(-50%);
+}
+.hinh-thuc-trong h2{
+  margin-left: 20px;
+  /* cursor:; */
+}
+.hinh-thuc img{
+  color: #54bbef;
+    width: 50px;
+  }
+
+
+
+
+/* CSS */
+.button-89 {
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}

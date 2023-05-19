@@ -1,0 +1,111 @@
+<%- include("partials/header") %>
+    <link rel="stylesheet" href="/css/cart.css">
+    <form action="/thanhtoan" method="post" class="cart">
+        <div class="action">
+            <div class="tien">
+                <h2>Thành tiền:</h2>
+                <h3 id="full-tien" style="color: #f3acac;">0đ</h3>
+            </div>
+
+            <button type="submit" class="mua-ngay" name="a" value="1">Mua ngay</button>
+
+            <button class="mua-ngay them-san-pham" name="a" value="2">Thêm sản phẩm</button>
+
+        </div>
+        <div class="list-sp">
+            <% hang.forEach(element=> { %>
+                <div class="sp">
+                    <input type="checkbox" name="chon_hang" value="<%= element._id %>" id="">
+                    <div class="anh-sp"><img src="/uploads-img/<%= element.sanphamID.anh[0] %>" alt=""></div>
+                    <div class="thongtin-sp">
+                        <div class='tensp'>
+                            <p>
+                                <%= element.sanphamID.tenSanPham %>-<%= element.kichco %>-
+                            </p>
+                            <span style="display: block;
+                                padding: 10px 10px;
+                                border-radius: 50%;
+                                margin: auto auto;
+                                background-color: <%= element.mausac %>">
+                                </span>
+                        </div>
+                        <div>
+                            <% let time=element.sanphamID.tinhTime()/86400000; if (time> 0 || time <= -1){ %>
+                                    <div>
+                                        <p>Giá hiện tại</p>
+                                        <span style="text-decoration: line-through;">
+                                            <%= element.sanphamID.chuyenTien(element.sanphamID.giaban)%>
+                                        </span>
+                                        <span style="color: red;">
+                                            <%= element.sanphamID.sale %>%
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="gia" value="<%= element.sanphamID.tinhtien() %>">
+                                            <%= element.sanphamID.chuyenTien(element.sanphamID.tinhtien()) %>
+                                        </span>
+                                    </div>
+                                    <hr>
+                                    <% } %>
+
+                                        <% if (time> 0 && time <=5){%>
+                                                <div style="color: rgba(0, 0, 0, 0.5);">
+                                                    <p>Giá ưu đãi 5/5</p>
+                                                <div>
+
+                                                    <span style="text-decoration: line-through;">
+                                                        <%= element.sanphamID.chuyenTien(element.sanphamID.giaban)%>
+                                                    </span>
+                                                    <span style="color: #f3acac;">
+                                                        <%= element.sanphamID.sale2 + element.dattruoc%>%
+                                                    </span>
+                                                </div>
+                                                <div>
+                                                    <span class="gia"
+                                                        value="<%= element.sanphamID.tinhtien(element.dattruoc) %>">
+                                                        <%= element.sanphamID.chuyenTien(element.sanphamID.tinhtien(element.dattruoc))%>
+                                                            
+                                                    </span>
+                                                </div>
+                                                </div>
+                                                <% } if (time <= 0 && time > -1){ %>
+                                                    <p>5/5 siêu sale </p>
+                                                    <div>
+
+                                                        <span style="text-decoration: line-through;">
+                                                            <%= element.sanphamID.chuyenTien(element.sanphamID.giaban)%>
+                                                        </span>
+                                                        <span style="color: red;">
+                                                            <%= element.sanphamID.sale2 + element.dattruoc%>%
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="gia"
+                                                            value="<%= element.sanphamID.tinhtien(element.dattruoc) %>">
+                                                            <%= element.sanphamID.chuyenTien(element.sanphamID.tinhtien(element.dattruoc))
+                                                                %>
+                                                        </span>
+                                                    </div>
+                                                <% }%>
+                        </div>
+                        <div class="chon-so-luong">
+                            <button class="bam" value="tru" name="<%= element._id %>"><img
+                                    src="/img/icons8-subtract-16.png" alt=""></button>
+                            <input type="number" min="1" max="99" value="<%= element.soluong %>" id="">
+                            <button class="bam" value="cong" name="<%= element._id %>"><img
+                                    src="/img/icons8-plus-math-16.png" alt=""></button>
+                        </div>
+                        <div class="tong-tien-sp">
+                            <p></p>
+                        </div>
+                        <div class="xoa">
+                            <a href="/xoa/<%= element._id %>"><img src="/img/remove.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </form>
+
+    <script src="/js/giohang.js"></script>
+    <%- include("partials/footer") %>

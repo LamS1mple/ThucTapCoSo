@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+.test {
+  background-color: yellow;
+}
+</style>
+
+<body style="font-size:20px;height:1500px">
+
+<h1>The onscroll Event</h1>
+
+<p id="myP" style="position:fixed">
+If you scroll 50 pixels down from the top of this page, the class "test" is added to this paragraph.
+Scroll up again to remove the class.</p>
+
+<script>
+window.onwheel = function(e) {
+  // print "false" if direction is down and "true" if up
+  console.log(e.wheelDelta )
+}
+
+
+</script>
+
+</body>
+</html>

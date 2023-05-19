@@ -1,0 +1,82 @@
+.cart {
+  padding-top: 150px;
+  display: flex;
+}
+.action {
+  position: fixed;
+  width: 30%;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  flex-basis: 30%;
+  height: 200px;
+}
+.tien {
+  display: flex;
+  justify-content: space-between;
+}
+.list-sp {
+  margin-left: 30%;
+  padding-left: 30px;
+  flex-basis: 70%;
+}
+.sp {
+  display: flex;
+}
+.anh-sp > img {
+  height: 150px;
+}
+
+.chon-so-luong{
+    display: flex;
+    text-align: center;
+    float: left;
+    border: 2px solid black;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  border-style: none;
+  pointer-events: none;
+  text-align: center;
+}
+.bam {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.bam:first-child {
+  color: rgba(0, 0, 0, 0.2);
+  border-style: none;
+  border-right: solid 2px rgba(0, 0, 0, 0.2) !important;
+}
+.bam:last-child {
+  border-style: none;
+  border-left: solid 2px rgba(0, 0, 0, 0.2) !important;
+}
+
+input[type="number"]:focus-visible {
+    outline: none;
+}
+.tensp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thongtin-sp{
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+}
+.mua-ngay{
+  height: 50px;
+  display: block;
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 20px;
+  background-color: aqua;
+}

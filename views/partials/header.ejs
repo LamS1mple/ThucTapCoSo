@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/header.css"  type="text/css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lobster&family=Merriweather&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,700&family=Sacramento&display=swap"
+        rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        
+        <div class="header header-scroll">
+            <ul class="header-left">
+                <li><a href="/">Tất cả sản phẩm</a></li>
+                <li><a href="/">Sản phẩm mới</a></li>
+                <li><a href="/">Áo</a></li>
+                <li><a href="/">Quần</a></li>
+                <li><a href="/sale">Sale 5/5</a></li>
+            </ul>
+
+            <div class="header-logo">
+                <a href="/">
+                    <img class="img-logo" src="/img/logo.svg" alt="">
+                </a>
+            </div>
+
+            <ul class="header-right">
+                <li>
+                    <a href="/">
+                        <img src="/img/search.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a href="/giohang">
+                        <img class="img-cart" src="/img/cart.png" alt="">
+                    </a>
+                </li>
+                <li style="margin: auto auto;">
+                    <!-- <div style="margin: auto auto;"> -->
+                    <button class="user">
+                        <img src="/img/user.png" alt="" srcset="">
+                        <ul class="user-button">
+                            <% try { %>
+                                <li style="display: none;" name="" id=""><%= user._id %></li>
+                                
+                                <li>Tiền đã mua <%= user.chuyenTienThoi(user.sotiendamua) %>đ</li>
+                                
+                                <li>Cấp bậc <%= user.capBac() %></li>
+                                
+                                <li ><a href="/logout">Đăng xuất</a></li>
+                                
+                            <% } catch (error) { %> 
+                               
+                                <li><a href="/login">Đăng nhập</a></li>
+                            <% }  %>
+                        </ul>
+                    </button>
+                    
+                    
+                    <!-- <a href="/login">Đăng nhập|Đăng ký</a> -->
+                    <!-- </div> -->
+                </li>
+                <li>
+                    <% if(user) {%>
+                        <%= user.ten %>
+                    <% } %>
+                </li>
+            </ul>
+
+        </div>
+    </header>
+
+    
+
+

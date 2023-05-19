@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Roboto", sans-serif;
+    padding-left: 20px;
+    /* height: 1000px; */
+  }
+h2{
+    margin: auto 0 ;
+}
+.thong-tin{
+    width: 70%;
+    padding-right: 20px;
+    float: left;
+}
+.header-logo{
+    text-align: center;
+}
+.khung{
+    width: 100%;
+    display: flex;
+}
+.thong-tin-giao-hang{
+    flex-basis: 50%;
+}
+.thong-tin-thanh-toan{
+    flex-basis: 50%;
+}
+.san-pham{
+    padding: 0 15px;
+    background-color: #e7e8fc;
+    width: 30%;
+    height: 100%;
+    float: right;
+}
+.ten{
+    border: solid 1px ;
+    margin: 20px 0;
+}
+input[type=text]{
+    border: none;
+    display: block;
+    width: 100%;
+}
+input[type=text]:focus-visible{
+    outline: 0;
+}
+.thong-tin-thanh-toan{
+    margin-left: 20px;
+}
+
+.chung{
+    border: solid 1px black;
+    padding: 20px 0;
+    padding: 20px 0;
+    cursor: pointer;
+    margin: 20px 0;
+}
+.chung > label{
+    cursor: pointer;
+
+}
+.cac-san-pham{
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    height: 120px;
+    padding-right: 20px;
+}
+.anh-san-pham{
+    width: 70px;
+    align-self: flex-start;
+    position: relative;
+}
+.anh-san-pham > img{
+    width: 70px;
+    position: absolute;
+    border-radius: 5px;
+}
+.anh-san-pham > span {
+    right: 0;
+    padding: 5px 5px;
+    border-radius: 50%;
+    text-align: center;
+    display: block;
+    background-color: aqua;
+    position: absolute;
+}
+.san-pham-sroll{
+    height: 150px;
+    overflow: auto;
+}
+
+table{
+    margin-top: 50px;
+    width: 100%;
+    text-align: left;
+}
+.tien-tam{
+    text-align: right;
+}
+
+.tien-tam:last-child{
+    color: #fcaf17;
+}
+.tam-tinh > th{
+    padding-top: 20px ;
+}
+
+button[type="submit"]{
+
+    display: block;
+    margin: 30px auto;
+    cursor: pointer;
+    font-size: large;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fcaf17;
+}
