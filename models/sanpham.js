@@ -16,11 +16,13 @@ const SanPhanSchema = new mongoose.Schema({
 });
 
 SanPhanSchema.methods.tinhtien = function(sale3) {
-  if (!sale3){
+  if (sale3 === undefined){
     return (this.giaban * (100 - this.sale)) / 100;
     
   }
   else{
+    console.log((this.giaban * (100 - this.sale2 - sale3 )) / 100)
+
     return (this.giaban * (100 - this.sale2 - sale3 )) / 100;
 
   }

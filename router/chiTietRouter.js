@@ -27,15 +27,16 @@ router.post("/sanpham/:id",async function(req ,res){
         res.redirect("/login")
     }
     else{
-       
+        
         const order = new Order({
             sanphamID: req.params.id,
             userID : req.session.user._id,
             mausac : req.body.mausac,
             kichco : req.body.kichco,
             soluong : req.body.soluong,
-            dattruoc: Math.ceil(Number.parseInt(req.body.dattruoc))
+            dattruoc: Math.ceil(req.body.dattruoc)
         })
+        console.log(order.dattruoc, Math.ceil(req.body.dattruoc))
         await order.save()
 
         res.redirect("/giohang")
