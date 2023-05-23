@@ -80,3 +80,82 @@ function send() {
   document.querySelector("input[name=kichco]").setAttribute("value",kichco)
   document.querySelector("input[name=soluong]").setAttribute("value",soluong)
 }
+
+
+
+
+
+
+function tinh(cao , nang){
+  if (cao <= 159){
+      if (nang <= 54){
+          return `<p>S-Áo</p>`
+      }
+      if (nang <= 61){
+          return (
+              `
+              <p>S-Áo</p>
+              <p>M-Quần</p>
+              `)
+      }
+      if (nang <= 70){
+          return (
+              `
+              <p>L-Áo</p>
+              <p>L-Quần</p>
+              `)
+      }
+      return '<p>Xin vui lòng xem bảng size</p>'
+  }
+  if (cao <= 165 ){
+      if ( nang >= 61 && nang < 65 ){
+          return (
+          `
+              <p>M-Áo</p>
+              <p>L-Quần</p>
+          `
+          )
+      }
+      if (nang >= 65 && nang <= 70){
+          return (
+          `
+              <p>L-Áo</p>
+              <p>L-Quần</p>
+          `
+          )
+      }
+      if (nang >= 70 && nang <= 80){
+          return (
+          `
+              <p>XL-Áo</p>
+              <p>XL-Quần</p>
+          `
+          )
+      }
+      return '<p>Xin vui lòng xem bảng size</p>'
+  }
+  return (
+          `
+              <p>XL-Áo</p>
+              <p>L-Quần</p>
+          `
+  )
+
+}
+
+let cao = 155;
+let nang = 48;
+
+document.querySelector("#mott").addEventListener("mousemove", function(e){
+  cao = this.value
+  document.querySelector("#tinh-chieu-cao").innerHTML= "Chiều cao: " + cao + "cm"
+  document.querySelector("#goi-y").innerHTML = tinh(cao, nang);
+
+
+})
+document.querySelector("#haii").addEventListener("mousemove", function(e){
+  nang = this.value
+  document.querySelector("#tinh-can-nang").innerHTML= "Cân nặng: " + nang + "kg"
+  document.querySelector("#goi-y").innerHTML = tinh(cao, nang);
+
+})

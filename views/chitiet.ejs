@@ -1,4 +1,25 @@
 <%- include("partials/header") %>
+<style>
+       input[type=range] {
+            
+            -webkit-appearance: none;
+            width: 100%;
+            background-color: #77919e;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        input[type=range]::-webkit-slider-thumb {
+                    -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        border-radius: 50%;
+        height: 25px;
+        background: #aa049f;
+        cursor: pointer;
+                }
+</style>
     <link rel="stylesheet" href="/css/chiTietSanPham.css">
     <div class="content">
         <div class="hinh-anh">
@@ -78,13 +99,47 @@
                 
             </div>
             
-
+            <div>
+                <h1 style="color: #54bbef;">Giới thiệu sản phẩm</h1>
+                <p style="
+                line-height: 30px;
+                color: #77919e;">Thiết kế đơn giản, form dáng tiện lợi của áo thun PPN4502. Tại sao chỉ với 1 chiếc áo thun nữ basic mà bạn có thể phối với 10 bộ độ khác nhau? Câu trả lời nằm ở chính sự đơn giản của chúng. Càng đơn giản, bạn lại càng dễ mix & match với những món đồ khác nhau.Áo thun nữ PPM4502 có thiết kế cổ tròn đơn giản, nhẹ nhàng tôn da. Tay cáo, form áo cũng không hề cầu kỳ, rất dễ mặc với nhiều thân hình khác nhau. Đặc biệt hơn, màu sắc của chiếc áo phông nữ cổ tròn này cũng rất nhã nhặn, trung tính, trơn màu. Sự tối giản từ thiết kế, đường may đến bảng màu giúp các chị em không cần đắn đo quá nhiều khi lựa chọn. Chất liệu cotton 95% được xử lý nghiêm ngặt, quy trình và công nghệ hiện đại nên mang tới cho chiếc áo sự thoải mái, mềm mại, thoáng mát ngay khi chạm vào. Cùng với đó, áo thun nữ cotton cổ tròn Yody có khả năng thâm shuts mồ hôi rất tốt nên người mặc không bị cảm giác bí bách, dính dính trên da khi đổ mồ hôi vào mùa hè. Bên cạnh đó, sản phẩm cũng chưa 5% spandex - loại sợi giúp co giãn, đàn hồi hiệu quả thích hợp mặc tới nhiều môi trường, ngay cả khi vận động </p>
+            </div>
         </form>
     </div>
-
+    <hr>
+    <div style="margin-top: 20px;
+    text-align: center;
+    margin-bottom: 50px;">
+        <h1>Hướng dẫn chọn size</h1>
+        <div style="width: 50%;
+    margin: auto auto;
+    background-color: orange;">
+        <div class="chieu-cao">
+            <p id="tinh-chieu-cao">chiều cao: 155cm</p>
+            <input id="mott" value="155" width="100%" type="range" min="155" max="190" step="1">
+        </div>
+        <div class="can-nang">
+            <p id="tinh-can-nang">cân nặng: 48kg</p>
+            <input id="haii" type="range" value="48" min="48" value="60" max="80" step="1">
+        </div>
+        
+        <div>
+            <h1>S!MPLE gợi ý</h1>
+            <div id="goi-y">
+                <p id="ao">S-Áo</p>
+                <p id="quan"></p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr>
+    <div style="
+    text-align: center;
+    ">
+    <h1>Bảng size</h1>
+        <img style="width: 700px;" src="/uploads-img/Untitled.png" alt="">
+    </div>
     <script src="/js/chitiet.js"></script>
-    <script>
-        // Lấy đối tượng button
-   
-    </script>
+    
     <%- include("partials/footer") %>

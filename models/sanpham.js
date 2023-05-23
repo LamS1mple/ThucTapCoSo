@@ -11,7 +11,8 @@ const SanPhanSchema = new mongoose.Schema({
   ngayban: String,
   sale: Number,
   giaban: Number,
-  kiemtra: Boolean
+  kiemtra: Boolean,
+  type : Number
 });
 
 SanPhanSchema.methods.tinhtien = function(sale3) {
